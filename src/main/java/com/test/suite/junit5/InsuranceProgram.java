@@ -5,9 +5,17 @@ public class InsuranceProgram {
     private static int basicInsurance = 500;
     private final static int surcharge = 100; // under 25 years
 
-    public static int printInsuranceInformation(int age, int accidents) {
-        System.out.print("Your age: " + String.valueOf(age));
-        System.out.print("\nAccidents did you have are: " + String.valueOf(accidents));
+    /**
+     * Get the insurance
+     * @param parameters
+     * @return insurance
+     */
+    public static int getInsurance(Parameters parameters) {
+        int age = parameters.getAge();
+        int accidents = parameters.getAccidents();
+
+        System.out.println("Your age: " + String.valueOf(age));
+        System.out.println("Accidents did you have are: " + String.valueOf(accidents));
 
         if(accidents > 6) {
             System.out.println("No insurance");
@@ -22,6 +30,12 @@ public class InsuranceProgram {
         return calculateInsurance(accidents, basicInsurance);
     }
 
+    /**
+     * Calculate insurance
+     * @param accidents
+     * @param basicInsurance
+     * @return insurance
+     */
     private static int calculateInsurance(int accidents, int basicInsurance) {
         switch (accidents) {
             case 0: System.out.println("No surcharge");

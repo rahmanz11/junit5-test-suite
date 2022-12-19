@@ -77,7 +77,10 @@
             --illegal-access=permit
           </argLine>
           <testFailureIgnore>true</testFailureIgnore>
-          <test>com.test.suite.junit5.InsuranceProgram</test>
+          <forkCount>2</forkCount>
+          <reuseForks>true</reuseForks>
+          <argLine>${surefireArgLine}</argLine>
+          <test>com.test.suite.junit5.InsuranceProgramTest</test>
         </configuration>
       </plugin>
       <plugin>
@@ -157,7 +160,7 @@
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>2.22.2</version>
         <configuration>
-          <outputName>JUnit-Examples-Test-Report</outputName>
+          <outputName>JUnit-Test-Report</outputName>
         </configuration>
       </plugin>
       <plugin>
