@@ -80,7 +80,7 @@
           <forkCount>2</forkCount>
           <reuseForks>true</reuseForks>
           <argLine>${surefireArgLine}</argLine>
-          <test>com.test.suite.junit5.InsuranceProgramTest</test>
+          <test>com.test.suite.junit5.InsuranceProgramTestSuite</test>
         </configuration>
       </plugin>
       <plugin>
