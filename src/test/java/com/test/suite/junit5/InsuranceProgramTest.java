@@ -38,21 +38,21 @@ public class InsuranceProgramTest {
     @Test
     void testAgeNotLessThan25() {
         System.out.println("======testAgeNotLessThan25 EXECUTED=======");
-        Assertions.assertEquals(600, InsuranceProgram.printInsuranceInformation(parameters));
+        Assertions.assertEquals(600, InsuranceProgram.getInsurance(parameters));
     }
 
     @ParameterizedTest
     @MethodSource("setupParameters")
     void parameterizedTestAgeNotLessThan25(Parameters parameters) {
         System.out.println("======parameterizedTestAgeNotLessThan25 EXECUTED=======");
-        Assertions.assertEquals(parameters.getInsurance(), InsuranceProgram.printInsuranceInformation(parameters));
+        Assertions.assertEquals(parameters.getInsurance(), InsuranceProgram.getInsurance(parameters));
     }
 
     @Test
     void testAgeLessThan25() {
         System.out.println("======testAgeNotLessThan25 EXECUTED=======");
         parameters = new Parameters(20, 1);
-        Assertions.assertEquals(600, InsuranceProgram.printInsuranceInformation(parameters));
+        Assertions.assertEquals(600, InsuranceProgram.getInsurance(parameters));
     }
 
     @AfterEach
